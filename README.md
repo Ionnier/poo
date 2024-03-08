@@ -6,7 +6,7 @@
 
 ## Nota Laborator
  * poate fi maxim **12**p
-    * 10p proiect
+    * 10p [proiect](./assets/proiect.md)
     * 2p [bonus](./assets/bonus.md)
  * daca nu aveti minim 5p fara bonus nu puteti intra in examen
 
