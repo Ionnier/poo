@@ -20,7 +20,7 @@
     - [Citirea si afișarea unui număr de la tastatură](#citirea-si-afișarea-unui-număr-de-la-tastatură)
     - [Citirea și afișarea unui șir de numere de la tastatură (cu alocare dinamică)](#citirea-și-afișarea-unui-șir-de-numere-de-la-tastatură-cu-alocare-dinamică)
     - [Citirea unui struct printr-o funcție](#citirea-unui-struct-printr-o-funcție)
-  - ["Exerciții"](#exerciții)
+  - [Exerciții](#exerciții)
     - [See also](#see-also)
 
 
@@ -595,7 +595,7 @@ int main() {
 ```
 
 
-## "Exerciții"
+## Exerciții
 
 1. Citește două numere de la tastatură. Afișează maximul dintre ele.
 2. Citește un număr variabil de numere de la tastatură. Afișează minimul dintre ele.
@@ -608,8 +608,10 @@ int main() {
 
 Recomandare:
 
+* folositi memorie alocata dinamic
 * modularizați programele ca să vă obișnuiți cu locul unde să folosiți pointer și unde nu
 * citiți parțial referințele
+
 
 
 ### See also
