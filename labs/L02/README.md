@@ -602,10 +602,72 @@ public:
 
 ## Exerciții
 
-1. Completați codul următor astfel încât să funcționeze:
+1. Scrieți un program în C++ care să conțina (1p):
+   * clasa Mașină cu datele membre: producator, model, pret_lansare, an_fabricatie
+     * constructor de inițializare cu toți parametrii
+     * destructor, constructor de copiere, operator de =, dacă considerați că sunt necesari, daca nu considerați menționati de ce
+     * supraîncarcarea operatorului de << pentru afișare (ostream)
+     * supraîncarcarea operatorului de >> pentru intrare (istream)
+     * funcția dată membru .calculareValoareCurenta(an_curent) care in funcție de ce an primește ca argument va calcula noua valoare a mașinii. În fiecare an o mașină iși pierde valoarea cu 5% din prețul acelui an. Deci în 2024 o mașina va avea un preț. În 2025, 95% din prețul din 24. În 2026, 95% din prețul din 2025, etc. 
+```mermaid
+classDiagram
+    class Masina{
+      -string producator
+      -string model
+      -int pret_initial
+      -int an_lansare
+      +Masina(producator, model, pret_initial, an_lansare)
+      +operator<<(ostream&, const Masina&)
+      +operator>>(istream&, Masina&)
+      +calculareValoareCurenta(an_curent)
+    }
+```
+2. Completați codul următor astfel încât să compileze (2p):
 
 ```c++
+int main() {
+    Telefon t("Producator", "Model");
 
+    t.aplicatie_apel();
+
+    t.apeleaza("XXXXXXXXXX"); // poate fi accesat doar din 'ecranul' în care intram prin funcția precedentă
+
+    cout << ~t; // va afisa ultimul numar format
+
+    t.aplicatie_apel();
+
+    t.creeaza_contact("XXXXXXXXXX", "BBBB") // poate fi accesată doar din 'ecranul' functiei precedente
+
+    t["XXXXXXXXXX"] // va returna numele contactului cu numarul "XXXXXXXXXX" "BBBB"
+
+    cout << t;
+}
+```
+
+3. Considerați clasa:
+
+```c++
+class Example {
+public:
+    Example() {
+        cout << "A";
+    }
+    Example(const Example &aux) {
+        cout << "B";
+    }
+    ~Example() {
+        cout << "C";
+    }
+};
+```
+
+Creați o funcție main, care folosind clasa de mai sus să afișeze pe ecran: ABACAAAAAACCC (3p).
+
+
+-------------------
+x. Completați codul următor astfel încât să funcționeze:
+
+```c++
 int main() {
     Carte C("Book Name", "Author Name", 2024);
 
@@ -625,23 +687,4 @@ int main() {
     std::cout << e;
 }
 ```
-
-2. Implementati clasa "ListaDublaInlantuita"
-
-Considerați clasa 
-
-```c++
-struct Nod{ 
-    int info; 
-    Nod* prev, next;
-}
-```
-
-Clasa ListaDublaInlantuita va suporta:
-
-- constructor implicit
-- constructor cu un nod destart
-- adaugare la final
-- stergere nod capat
-- stergere nod inceput
-- cautare dupa un int
+(solution [here](./example/main.cpp))

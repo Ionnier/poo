@@ -4,11 +4,7 @@ class SirInt {
     int n;
     int *V;
 public:
-    SirInt() {
-        n = 0;
-        V = nullptr;
-    }
-
+    SirInt();
     SirInt(int &n) {
         this->n = n;
         V = new int[n];
@@ -51,42 +47,60 @@ public:
         return o;
     }
 
-    void citire(std::istream &in) {
-        std::cout << "nr elemente= ";
-        in >> n;
-        if (V != nullptr) {
-            delete[] V;
-        }
-        if (n <= 0) {
-            return;
-        }
-        int *aux = new int[n];
-        for (int i = 0; i < n; i++) {
-            std::cout << "V[" << i << "]=";
-            in >> aux[i];
-        }
-        this->V = aux;
-    }
+    void citire(std::istream &in);
 
     friend std::istream &operator>>(std::istream &i, SirInt &p) {
         p.citire(i);
         return i;
     }
 
-    SirInt &operator=(const SirInt &aux) {
-        this->n = aux.n;
-        if (V != nullptr) {
-            delete[] V;
-        }
-        V = new int[n];
-        for (int i = 0; i < n; i++) {
-            V[i] = aux.V[i];
-        }
-        return *this;
-    }
-
 };
 
+void SirInt::citire(std::istream &in) {
+    std::cout << "nr elemente= ";
+    in >> n;
+    if (V != nullptr) {
+        delete[] V;
+    }
+    if (n <= 0) {
+        return;
+    }
+    int *aux = new int[n];
+    for (int i = 0; i < n; i++) {
+        std::cout << "V[" << i << "]=";
+        in >> aux[i];
+    }
+    this->V = aux;
+}
+
+SirInt :: SirInt() {
+    n = 0;
+    V = nullptr;
+}
+
+SirInt& SirInt::operator=(const SirInt &aux) {
+    this->n = aux.n;
+    if (V != nullptr) {
+        delete[] V;
+    }
+    V = new int[n];
+    for (int i = 0; i < n; i++) {
+        V[i] = aux.V[i];
+    }
+    return *this;
+}
+
+SirInt& SirInt::operator=(const SirInt &aux) {
+    this->n = aux.n;
+    if (V != nullptr) {
+        delete[] V;
+    }
+    V = new int[n];
+    for (int i = 0; i < n; i++) {
+        V[i] = aux.V[i];
+    }
+    return *this;
+}
 
 class MatriceInt {
 private:
@@ -182,20 +196,20 @@ public:
 };
 
 int main() {
-    Carte C("BookName", "AuthorName", 2024);
+    // Carte C("BookName", "AuthorName", 2024);
 
-    Carte D;
+    // Carte D;
 
-    std::cin >> D;
+    // std::cin >> D;
 
-    if (C == D) {
-        std::cout << "Cartile sunt la fel";
-        return 1;
-    }
+    // if (C == D) {
+    //     std::cout << "Cartile sunt la fel";
+    //     return 1;
+    // }
 
-    std::cout << D.genereazaSimilaritate();
+    // std::cout << D.genereazaSimilaritate();
 
-    Carte e = C + D;
+    // Carte e = C + D;
 
-    std::cout << e;
+    // std::cout << e;
 }
