@@ -184,3 +184,9 @@ Note:
 
 * am folosit metoda de clonare prin SSH nu prin HTTPS pentru ca o aveam deja configurată, când o să folosiți HTTPS o să vi se deschidă un browser în care să vă autentificați (e posibil să își facă auto login)
 * am folosit IDE-ul pentru pașii de creat branch, commit & push, dar comenzile sunt fix cele de mai sus 
+
+## Exemplu parțial proiect
+
+[Here](https://github.com/Ionnier/oop-template-t1)
+
+Parțial pentru că îi lipsește multă funcționalitate
