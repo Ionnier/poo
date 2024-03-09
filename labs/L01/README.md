@@ -17,7 +17,7 @@
   - [Aritmetica pointerilor](#aritmetica-pointerilor)
   - [Tipuri de date complexe](#tipuri-de-date-complexe-1)
   - [Exemple](#exemple)
-    - [Citirea si afișarea unui număr de la tastatură](#citirea-si-afișarea-unui-număr-de-la-tastatură)
+    - [Citirea și afișarea unui număr de la tastatură](#citirea-și-afișarea-unui-număr-de-la-tastatură)
     - [Citirea și afișarea unui șir de numere de la tastatură (cu alocare dinamică)](#citirea-și-afișarea-unui-șir-de-numere-de-la-tastatură-cu-alocare-dinamică)
     - [Citirea unui struct printr-o funcție](#citirea-unui-struct-printr-o-funcție)
   - [Exerciții](#exerciții)
@@ -26,26 +26,26 @@
 
 ## Requirements:
 
- * Instalare [CLion]()
-    * o să aveti nevoie de [licență educațională]()
+ * Instalare [CLion](https://www.jetbrains.com/clion/)
+    * o să aveți nevoie de [licență educațională](https://www.jetbrains.com/community/education/#students)
     * CLion este un Integrated Development Environment (IDE), din acest motiv el vine "echipat" cu tot ce aveți nevoie ca să rulați tot ce o să se facă la curs
-    * e facut de JetBrains deci o să fie extrem de familiar cu alte IDE-uri pe care le veți folosii în viitor (PyCharm, InteliJ)
+    * e făcut de JetBrains deci o să fie extrem de familiar cu alte IDE-uri pe care le veți folosi în viitor (PyCharm, InteliJ)
  * Alternative (nerecomandat):
      * CodeBlocks
      * VS Code + un compilator
      * Microsoft Visual Studio
 * Configurare [CLion + Git tutorial](https://github.com/mcmarius/poo/tree/master/env) @mcmarius
-* Puteti folosii [Sourcetree](https://www.sourcetreeapp.com/) pentru a abstractiza rularea constantă a comenzilor (doar dupa ce va familiarizati cu ele)
+* Puteți folosi [Sourcetree](https://www.sourcetreeapp.com/) pentru a abstractiza rularea constantă a comenzilor (doar după ce vă familiarizați cu ele)
   * îl recomand mai mult decât cel din IDE pentru că tinde să fie destul de încet
-  * sunt cazuri și cazuri când le folosesc pe toate, gasițivă preferința 😁
+  * sunt cazuri și cazuri când le folosesc pe toate, găsițivă preferința 😁
 
 ## Ce este C++?
 
-Este o extensie pentru C ca să suporte programare orientată obiect.
+Este o extensie pentru C ca să suporte programare orientată pe obiecte.
 
 Pentru a rula un program scris în C++ acesta trebuie să fie compilat. Acesta va compila într-un executabil specific sistemului pe care rulează.
 
-Sistemele UNIX-based, în funcție de distribuție vin cu compilatorul g++ deja instalat.
+Sistemele UNIX-based, în funcție de distribuție, vin cu compilatorul g++ deja instalat.
 
 Pe Windows, putem să instalăm manual un compilator (de ex. prin MinGW).
 
@@ -90,23 +90,23 @@ int main() {
     // Tipuri de date standard:
 
 
-    // bool = true / false (reprezentat pe 1 bit) (deci doar 0 / 1)
+    // bool = true / false (deci doar 1 / 0) (reprezentat pe 1 sau 4 Bytes. link "reprezentare bool" mai jos) 
     bool x = true;
 
     // O dată ce o valoare este definită, ea poate fi reasignată
     x = false;
 
-    // char = character ASCII (reprezentat pe 8 biți / 1 Byte) (deci doar numere -255 -> 255 care sunt interpretate ca caractere conform tabela ASCII )
+    // char = character ASCII (reprezentat pe 8 biți / 1 Byte) (deci doar numere [-128, 127] care sunt interpretate ca caractere conform tabela ASCII )
 
     char y = 'a';
 
     // int = numere întregi (reprezentat pe 4 Bytes)
-    // deci  doar numere între 2^-16 - 2^16
+    // deci  doar numere între [-2^31, 2^31)
 
     int z = 10;
 
-    // float = numere reprezentate în virgulă mobilă (8 Bytes)
-    // double = numere reprezentate în virgulă mobilă cu dublă precizie (16 Bytes)
+    // float = numere reprezentate în virgulă mobilă (4 Bytes) (link "reprezentare float" mai jos)
+    // double = numere reprezentate în virgulă mobilă cu dublă precizie (8 Bytes)
 
     // e mai complicat modul cum funcționează interpretarea biților pentru float / double și nu merită
 
@@ -118,11 +118,15 @@ int main() {
 
     unsigned int p = 10;
 
-    // acum putem memora valori doar 0 - (2 ^ 32 - 1) întrucat avem un bit în plus
+    // acum putem memora valori doar [0, 2^32) întrucat avem un bit în plus
 
     // ^ - reprezentarea numerelor în format binar
 }
 ```
+[reprezentare bool](https://stackoverflow.com/questions/4897844/is-sizeofbool-defined-in-the-c-language-standard)
+
+[reprezentare float](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)
+
 
 ## Tipuri de date complexe 
 
@@ -143,13 +147,12 @@ int main() {
     // declararea unui sir de caractere (string)
     string example = "Hello World";
 
-    // declararea unui vector de int si initializarea acestuia cu 5 elemente
+    // declararea unui vector de int și inițializarea acestuia cu 5 elemente
     vector<int> sir = {
         1, 2, 3, 4, 5
     };
 
 }
-
 ```
 
 
@@ -158,11 +161,9 @@ int main() {
 ```c++
 // funcțiie în C++
 // au formatul 
-// nume_functie(argumente) urmat de acolade pentru scrierea funcției
-// parametru_de_iesire 
+// tip_de_date_returnat nume_functie(argumente) urmat de acolade pentru scrierea funcției
 
-// cand o funcție nu returnează nimic
-// se foloseste void
+// cand o funcție nu returnează nimic se folosește void
 void doSomething() {
     return; // nu returnează nimic
 }
@@ -178,7 +179,7 @@ int main() {
 
     // cand apelam o funcție
     // se oprește execuția codului din care este apelată
-    // parametrii trimiși ca input vor fi copiați (deci nu pot fi modificați în interiorul funcției)
+    // în acest caz, parametrii trimiși ca input vor fi copiați (deci nu pot fi modificați în interiorul funcției)
     int z = adunare(x, y);
 
     // z == 5
@@ -201,8 +202,8 @@ int main() {
 
     int n;
 
-    // pentru citirea de la tastatura (pana la enter)
-    // se folosete cin (console - input)
+    // pentru citirea de la tastatură (până la enter)
+    // se folosește cin (console - input)
     cin >> n;
 
     cout << n;
@@ -214,7 +215,7 @@ int main() {
 
 ```c++
 int main() {
-    // avem if pentru conditionale
+    // avem if pentru condiționale
     bool x = true;
 
     if (x == true) {
@@ -227,27 +228,30 @@ int main() {
     // condiții repetitive
     while (x == true) {
         // se execută cât timp x va fi true
-        // se ieși din while oricând folosind
+        
+        // se poate ieși din while oricând folosind
         break;
     }
 
     for (int i = 0; i < 10; i++) {
-        // îl inițializează pe i cu 0, rulează cât timp i este mai mic ca 10, si la fiecare loop îl iterează cu 1
+        // îl inițializează pe i cu 0, rulează cât timp i este mai mic ca 10, și la fiecare loop îl incrementează cu 1
     }
     int i = 0;
     // Următoarele instrucțiuni sunt echivalente
 
-    i++ // adaugă la i 1 
     i += 1 // adaugă la i 1
     i = i + 1 // face adunarea i + 1 si i-o atribuie lui i;
-    ++i // adaugă la i 1, dar în altă ordine, mai întâi se execută linia cu valoarea curentă a lui i, și după îl încrementează
+    ++i // adaugă la i 1, DAR mai întâi îl incrementează și după se execută linia cu noua valoare
+    i++ // adaugă la i 1 DAR mai întâi se execută linia cu valoarea curentă a lui i, și după îl încrementează
+
+    /// !!! ++i increments the value, then returns it. i++ returns the value, and then increments it !!!
 
     do {
         // execute some code
         break;
     } while(true) // echivalent cu while, însă se execută porțiunea de cod din do, și abia după se verifică condiția din while
     
-    // da match la element-ul i față de niște cazuri prestabilite
+    // dă match la element-ul i față de niște cazuri prestabilite
     switch(i) {
         case 1: {
             // do something when i is 1
@@ -255,11 +259,17 @@ int main() {
         }
         case 2: {
             // do something when i is 2
+            
+            // because this case does not have a break,
+            // the next case will also be executed after this one
+            
+            // if this is intentional, in C++17, this case requires the next attribute:
+            [[fallthrough]];
         }
         case 3: {
             // do something when i is 3
-            // because 2 does not have break
-            // this also executes when i is 2
+            // OR when i is 2 (because the previous case does not have a break)
+            break;
         }
         default: {
             // when i does not match any case
@@ -301,11 +311,11 @@ int main() {
     int x = 5;
 
     // C-ul ne permite să memorăm aceasta adresă prin pointeri
-    int *x p; // pointer la int, dat de prezenta *
-    // Pointer = o variabila ce memoreaza adrese
+    int *x p; // pointer la int, dat de prezența *
+    // Pointer = o variabilă ce memorează adrese
     // Ce este la memoria aia este data de tipul pointerului
-    // in cazul nostru va fi un pointer de int
-    // deci la adresa memorata va fi un int
+    // în cazul nostru, va fi un pointer de int
+    // deci la adresa memorată va fi un int
 
     // pentru a face rost de adresa unei variabile folosim &
     p = &x;
@@ -316,26 +326,26 @@ int main() {
 
 
     // pentru a face rost de valoarea ce se afla la un pointer
-    // folosim operatorul de deferentiere
-    // adica *
+    // folosim operatorul de dereferențiere
+    // adică *
 
     int x_copy = *p;
     
-    // cand scriem *p e ca si cum am folosii variabila x direct, sau mai bine spus memoria interpretata de la adresa lui x
+    // cand scriem *p e ca si cum am folosii variabila x direct, sau mai bine spus memoria interpretată de la adresa lui x
 
-    cout << x << endl; // endl = print '\n' in console, adica new line
+    cout << x << endl; // endl = print '\n' in console, adică new line
 
-    // va afisa 5
+    // va afișa 5
 
-    cout << x_copy << endl; // va afisa 5
+    cout << x_copy << endl; // va afișa 5
 
 
-    // daca modificam valoarea lui x
+    // dacă modificăm valoarea lui x
     x = 6;
 
-    cout << x << endl; // va afisa 6
-    cout << x_copy << endl; // va afisa 5, x_copy are adresa propri care nu a fost modificata
-    cout << *p << endl; // va afisa 6, pointer-ul mereu va da valoarea reala de la acea adresa
+    cout << x << endl; // va afișa 6
+    cout << x_copy << endl; // va afișa 5, x_copy are adresă proprie care nu a fost modificată
+    cout << *p << endl; // va afișa 6, pointer-ul mereu va da valoarea reală de la acea adresă
 }
 ```
 
@@ -346,13 +356,13 @@ int main() {
 using namespace std;
 
 void doSomething(int x) {
-    // se va modifica copia locala a lui x
+    // se va modifica copia locală a lui x
     x++;
-    // deci modificarile nu vor fi simtite de variabila reala
+    // deci modificările nu vor fi simțite de variabila reală
 }
 
 void doSomethingElse(int *x) {
-    // x-ul este deferențiat, deci accesăm memoria efectivă a valorii pasate
+    // x-ul este dereferențiat, deci accesăm memoria efectivă a valorii pasate
     (*x)++;
     // x-ul va fi modificat
 }
@@ -360,16 +370,16 @@ void doSomethingElse(int *x) {
 int main() {
     int x = 5;
 
-    cout << x << endl; // va afisa 5
+    cout << x << endl; // va afișa 5
 
     // doSomething va primii o copie a lui x
     doSomething(x);
     // nu o poate modifica
 
-    cout << x << endl; // va afisa 5
+    cout << x << endl; // va afișa 5
 
     doSomethingElse(&x) // trimitem adresa lui x
-    cout << x; // va afisa 6
+    cout << x; // va afișa 6
     
 }
 ```
@@ -378,20 +388,20 @@ int main() {
 
 ```c++
 int main() {
-    // Alocarea statica a memoriei
-    // Alocarea statica se face in stack (deci e limitat)
+    // Alocarea statică a memoriei
+    // Alocarea statică se face in stack (deci e limitat)
     // Dar e mult mai rapida -> se face la compilare
 
-    // Se declara un sir de int-uri de 100 de elemente
+    // Se declară un șir de int-uri de 100 de elemente
     int p[100];
 
     // ce este p?
-    // p este un pointer catre o adresa de memorie
-    // deci la locul de memorie unde p pointeaza
-    // suficient de multă memorie pentru 100 de int-uri
+    // p este un pointer către o adresă de memorie
+    // deci la locul de memorie unde p pointează, 
+    // este suficient de multă memorie pentru 100 de int-uri
 
-    // cum accesam numerele din acel sir
-    p[0] // -> luam primul element
+    // cum accesăm numerele din acel șir
+    p[0] // -> luăm primul element
 
 
     // Alocarea dinamica -> se face în heap 
@@ -403,23 +413,22 @@ int main() {
 
     // ce este p_dynamic?
     // este un pointer
-    // la adresa unde el pointeaza se aloca suficient de multa memorie astfel încât să fie 100 de elemente
+    // la adresa unde el pointează se alocă suficient de multă memorie astfel încât să fie 100 de elemente
     // deci sunt alocate 4 * 100 Bytes
 
-    // Cum accesam elementele?
+    // Cum accesăm elementele?
 
-    p_dynamic[0] // accesam primul element
+    p_dynamic[0] // accesăm primul element
 
     // !!ATENTIE!!
 
-    // cand alocam static
-    // compilatorul stie singur ca trebuie sa dezaloce memorie
-    // cand alocam dinamic, reprezinta responsabilitatea noastra sa facem asta
-    // facem asta folosind operatorul delete
+    // cand alocăm static
+    // compilatorul știe singur că trebuie sa dezaloce memorie
+    // cand alocăm dinamic, este responsabilitatea noastră să facem asta folosind operatorul delete
 
     delete [] p_dynamic;
-    // dezalocam memoria alocata dinamic care era la p_dynamic
-    // find un vector, folosim []
+    // dezalocăm memoria alocată dinamic care era la p_dynamic
+    // fiind un vector, folosim []
 }
 ```
 
@@ -431,13 +440,13 @@ int main() {
 
     // p reprezintă o adresă de memorie, este un pointer
 
-    // el o sa pointeze la primul element
+    // el o să pointeze la primul element
 
-    // cum il obtinem pe urmatorul?
+    // cum îl obținem pe următorul?
 
-    // in mod clasic
-    // daca p pointeaza la o adresa
-    // stim ca avem int-uri, deci trebuie sa sarim peste 4 Bytes
+    // în mod clasic
+    // dacă p pointează la o adresă și
+    // știm că avem int-uri, trebuie să sărim peste 4 Bytes
 
     // p
     // | - - - - | - - - - |
@@ -446,25 +455,25 @@ int main() {
     //   primul el   al 2-lea
     //  int = 4 Bytes
 
-    // Ca sa facem rost de al doilea element, sarim peste cei 4 biti.
+    // Ca să facem rost de al doilea element, sărim peste cei 4 Bytes.
 
-    // C-ul stie sa faca asta singur
+    // C-ul știe să facă asta singur
 
-    int *adresa_al_doilea_element = V + 1 // sarim un bloc de memorie
+    int *adresa_al_doilea_element = V + 1 // sărim un bloc de memorie
 
-    int al_doilea_elem = *(V+1) // dereferentiem ce e la adresa V+1
+    int al_doilea_elem = *(V+1) // dereferențiem ce e la adresa V+1
 
     // *(V+1) este echivalent cu
 
     int al_doilea_elem = V[1];
-    
 }
 ```
+### Important: `pointer[offset]` este același lucru cu `*(pointer + offset)` !!!
 
 ## Tipuri de date complexe
 
 ```c++
-// putem definii alte tipuri de variabile
+// putem defini alte tipuri de variabile
 struct Punct{
     int x;
     int y;
@@ -472,51 +481,53 @@ struct Punct{
 
 int main() {
     Punct punct;
-    // Putem accesa x si y folosind "."
+    // Putem accesa x și y folosind "."
     int xx = punct.x;
     int yy = punct.y;
-    // Ele se comporta ca variabile normale
+    // Ele se comportă ca variabile normale
 
-    // Memoria ocupata de un struct e egala cu suma componentelor
+    // Memoria ocupată de un struct e egala cu suma componentelor
     sizeOf(Punct) == sizeOf(int) + sizeOf(int)
 
-    // Cand avem adrese de struct-uri
+    // Când avem adrese de struct-uri
     Punct *p = &punct;
 
-    // Ca sa accesam variabilele, avem nevoie sa dereferentiem variabila si pot fi apelate direct
+    // Ca să accesăm variabilele, avem nevoie să dereferențiem variabila iar apoi pot fi apelate direct
 
     (*p).x;
 
-    // Exista un shorthand expression pentru asta
+    // Există un shorthand expression pentru asta:
     
     p->x;
     
     // este echivalent cu cea de mai sus
 }
 ```
+### Important: `pointer->variable_name` este același lucru cu `*(pointer).variable_name` !!!
 
 ## Exemple
 
-### Citirea si afișarea unui număr de la tastatură
+### Citirea și afișarea unui număr de la tastatură
 ```c++
 #include <iostream>
 using namespace std;
 
 int main() {
-    // declaram variabila
+    // declarăm variabila
     int x;
 
-    // afisam un mesaj la consola ce indica ca citim variabila
+    // afișăm un mesaj la consolă ce indică că vrem să citim variabila
     cout << "x=";
     
-    // citim de la tastatura pe x
+    // citim de la tastatură pe x
     cin >> x;
 
     cout << "x=" << x;
     // cout-ul poate fi înlănțuit
     // La fel și cin-ul
 
-    return 0; // opțional return în C++
+    // în C++, în funcția main, return-ul este opțional
+    // el va fi adăugat automat de compiler ca return 0; 
 }
 ```
 
@@ -527,22 +538,20 @@ int main() {
 using namespace std;
 
 int main() {
-    // un șir de numere 
     // un șir de numere este un șir de memorie dedicată int-urilor
 
-
-    // declaram variabila
+    // declarăm variabila
     int n;
 
-    // afisam un mesaj la consola ce indica ca citim variabila
+    // afișăm un mesaj la consola ce indică că vrem să citim variabila
     cout << "nr_elemente=";
     
-    // citim de la tastatura pe x
+    // citim de la tastatură pe x
     cin >> n;
 
     // alocăm memorie pentru aceste int-uri
     int *V = new int[n]; 
-    // int V[n] // o să observați că nu funcționează, alocarea statică necesită să cunoască numărul de elemente la compile time
+    // int V[n] // o să observați că nu funcționează. Alocarea statică necesită să cunoască numărul de elemente la compilare
 
     for (int i = 0; i < n; i++) {
         // pentru fiecare element care vrem să îl citim rulăm o citire la adresa lui de memorie
@@ -552,12 +561,12 @@ int main() {
         cin >> V[i];
     }
 
-    // afisarea
+    // afișarea
     for (int i = 0; i < n; i++) {
         cout << V[i];
     }   
 
-    // Lipseste ceva? Atentie.
+    // Lipsește ceva? Atenție.
 }
 ```
 
@@ -572,7 +581,7 @@ struct Punct {
     int y;
 };
 
-// primeste adresa ca sa poată fi modificat
+// primește adresa ca să poată fi modificat
 void citire_punct(Punct *punct) {
    cout << "x= ";
    cin >> punct->x;
@@ -581,8 +590,8 @@ void citire_punct(Punct *punct) {
 }
 
 void afisare_punct(Punct punct){
-    // in modul cum apelam functia asta, mereu va fi copiat punctul din nou
-    // la afisare nu ne intereseaza
+    // in modul cum apelăm funcția asta, mereu va fi copiat punctul din nou
+    // la afișare nu ne interesează
     // (momentan)
     cout << "Punct(" << punct.x << "," << punct.y << ")\n";
 }
@@ -608,7 +617,7 @@ int main() {
 
 Recomandare:
 
-* folositi memorie alocata dinamic
+* folosiți memorie alocată dinamic
 * modularizați programele ca să vă obișnuiți cu locul unde să folosiți pointer și unde nu
 * citiți parțial referințele
 
