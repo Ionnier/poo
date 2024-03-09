@@ -13,81 +13,81 @@ struct Student {
     int nr_matricol;
     string nume;
 }
-// Declararea unei variabile de tipul struct-ului se poate face si dupa definitia acestuia
+// Declararea unei variabile de tipul struct-ului se poate face și după definiția acestuia
   s;
 
 int main() {
 
-    // Afisarea unui mesaje in consola
+    // Afișarea unui mesaj în consolă
     cout << "nr_matricol =";
 
-    // Citirea unui numar de la tastatura
+    // Citirea unui număr de la tastatură
     cin >> s.nr_matricol;
 
-    // Afisarea altui mesaj
+    // Afișarea altui mesaj
     cout << "nume = ";
 
-    // Citirea unui singur cuvant de la tastatura
+    // Citirea unui singur cuvânt de la tastatură
     cin >> s.nume;
 
-    // Daca introducem mai multe cuvinte, ele raman in buffer, la urmatoarea citire acestea vor fi luate in considerare
-    // Daca nu sunt alte cuvinte, se va astepta input de la utilizator
+    // Dacă introducem mai multe cuvinte, ele raman în buffer, la următoarea citire acestea vor fi luate în considerare
+    // Dacă nu sunt alte cuvinte, se va aștepta input de la utilizator
     cin >> s.nume;
 
-    // Atunci cand citim, caracterul pentru ENTER ramane in buffer, il eliminam folosind cin.get
-    // Nu ne-a afectat la celelalte intrucat nu s-a acceptat input de marime 0
+    // Atunci când citim, caracterul pentru ENTER rămâne în buffer, îl eliminăm folosind cin.get
+    // Nu ne-a afectat la celelalte întrucât nu s-a acceptat input de mărime 0
     cin.get();
 
-    // Citirea mai multor cuvinte se poate face folosind getLine ce va citii pana la '\n'
-    // Aceasta va indeparta automat caracterul ENTER din buffer
+    // Citirea mai multor cuvinte se poate face folosind getLine ce va citi până la '\n'
+    // Aceasta va îndepărta automat caracterul ENTER din buffer
     getline(cin, s.nume);
 
-    // Declarea unui vector de studenti alocat static (in stiva)
-    // Alocarea este mai rapida, este facuta la compile time
-    // Dezalocarea se face la iesirea din scope
+    // Declarea unui vector de studenti alocat static (in stivă)
+    // Alocarea este mai rapidă, este facută la compile time
+    // Dezalocarea se face la ieșirea din scope
     Student studenti[100];
 
-    // Declararea unui vector de studenti alocat dinamic (in heap)
-    // Alocarea este facuta in timpul rularii
+    // Declararea unui vector de studenți alocat dinamic (în heap)
+    // Alocarea este făcuta în timpul rulării
     // Dezalocarea se face manual folosind delete
     // Se folosesc tool-uri pentru verificarea memory leak-uri -> Valgrind (Linux)
     Student *studenti2 = new Student[100];
 
-    // Dezalocare unui sir alocat dinamic
+    // Dezalocare unui șir alocat dinamic
     delete []studenti2;
 
 
-    // [] este folosit doar atunci cand dezalocam un sir
+    // [] este folosit doar atunci când dezalocam un șir
     Student *aux = new Student;
     delete aux;
 
 
-    // Declararea unui fisier de intrare
+    // Declararea unui fișier de intrare
     ifstream input("input.txt");
 
     input >> s.nr_matricol;
     getline(input, s.nume);
 
-    // Inchidem fisierul dupa ce terminam de citit
+    // Închidem fișierul după ce terminăm de citit
     input.close();
 
-    // Declararea unui fisier de afisare
+    // Declararea unui fișier de afișare
     ofstream output("output.txt");
 
     output << s.nume << " " << s.nr_matricol;
 
-    // Inchidem fisierul dupa ce terminam de afisat
-    // Folosim flush daca vrem sa scriem si sa nu il inchidem momentan
+    // Închidem fișierul după ce terminăm de afișat
+    // Folosim flush dacă vrem să scriem și să nu il închidem momentan
     output.close();
 
-    // Daca nu avem un return definit, avem unul implicit
+    // Dacă nu avem un return definit, avem unul implicit
 }
 ```
 ## C++ additions
 
 ### Supraîncărcarea funcțiilor
 
-Putem definii funcții în același scope cu același nume dar ce primesc argumente diferite.
+Putem defini funcții în același scope cu același nume dar ce primesc argumente diferite.
 
 Supraîncărcarea nu este posibilă doar prin tipul de date de ieșire.
 
@@ -126,31 +126,31 @@ Atunci când scriem o funcție, putem să setăm pentru ultimele argumente valor
 
 Atunci când apelăm funcția, putem omite argumentele implicite.
 
-Atenție! Nu putem sării peste argumente. 
+Atenție! Nu putem sări peste argumente. 
 
 ```c++
-// x va trebui sa primeasca de la tastatura mereu valori
-// y si z pot fi omise
-// cand apelam functia, nu putem sarii peste y, sa isi pastreaza valoarea implicita si sa o schimbam pe cea pentru z
+// x va trebui să primească de la tastatură mereu valori
+// y și z pot fi omise
+// când apelăm funcția, nu putem sări peste y dacă vrem să schimbăm valoarea lui z
 void doSomething(int x, int y = 3, int z = 5) {
     // ...
 }
 
 int main() {
-    // x primeste valoarea 6
-    // y primeste valoare 2
-    // z foloseste valoarea implicita 5
+    // x primește valoarea 6
+    // y primește valoare 2
+    // z folosește valoarea implicită 5
     doSomething(6, 2);
 }
 ```
 
-### Alocarea dinamica prin new si delete
+### Alocarea dinamica prin new și delete
 
-Au avantajul ca apeleaza constructorul fara parametrii
+Au avantajul că apelează constructorul fără parametrii
 
 ```c++
-Student *p = new Student(2); // Apeleaza constructorul cu parametrii 
-Student studenti = new Student[100]; // Apeleaza constructorul fara parametrii pentru fiecare element din sir
+Student *p = new Student(2); // Apelează constructorul cu parametrii 
+Student studenti = new Student[100]; // Apelează constructorul fără parametrii pentru fiecare element din șir
 
 // Pentru a elibera memoria ( + apelare destructor)
 delete p;
@@ -159,7 +159,7 @@ delete []studenti;
 
 ## Clase & Obiecte
 
-**Clasele** reprezinta un schelet pentru un *obiect*.
+**Clasele** reprezintă un schelet pentru un *obiect*.
 
 ### Definirea unei clase
 
@@ -175,17 +175,17 @@ class Student{
 
 Un **obiect** este o instanță a unei clase.
 
-Pentru a crea un obiect, trebuie sa apelam **constructorul** clasei. O clasa poate avea mai mulți constructori prin **supraîncărcarea funcțiilor**.
+Pentru a crea un obiect, trebuie să apelăm **constructorul** clasei. O clasa poate avea mai mulți constructori prin **supraîncărcarea funcțiilor**.
 
 Prin constructor creăm o instanță a unei clase și are rol de inițializare.
 
 Definirea unui constructor se face creând o metodă cu acelși nume ca al clasei.
 
-**Destructorul** se apeleaza automat in momentul in care obiectul creat va fi distrus. Are ca scop efectuarea unui clean-up (în special a memoriei alocate dinamice)
+**Destructorul** se apelează automat în momentul în care obiectul creat va fi distrus. Are ca scop efectuarea unui clean-up (în special a memoriei alocate dinamic)
 
-Definirea unui destructor se face creând o metoduă cu același nume ca  al clasei precedat de ~.
+Definirea unui destructor se face creând o metodă cu același nume ca al clasei precedat de ~.
 
-Fiind metode speciale, constructor-ul si destructor-ul nu au definit un tip de ieșire.
+Fiind metode speciale, constructor-ul și destructor-ul nu au definit un tip de ieșire.
 
 ```c++
 #include <iostream>
@@ -210,26 +210,26 @@ public:
         nume.clear();
     }
 
-} // Se apeleaza constructorul pentru s1
+} // Se apelează constructorul pentru s1
 s1 (1, "1");
 
 int main() {
-    // Se apeleaza constructorul pentru s2
+    // Se apelează constructorul pentru s2
     Student s2 (2, "3");
 
-    // Se apeleaza destructorul pentru s2
+    // Se apelează destructorul pentru s2
 }
 
-// Se apeleaza destructorul pentru s1
+// Se apelează destructorul pentru s1
 ```
 
 ### Metode implicite
 
-Orice clasa are implicit daca nu are deja definit:
- * un constructor fara parametrii
+Orice clasă are implicit dacă nu are deja definit:
+ * un constructor fără parametrii
  * un constructor de copiere ()
  * un destructor
- * supraincarcarea operatorului de asignare (=)
+ * supraîncărcarea operatorului de asignare (=)
 
 Astfel, codul urmator este valid:
 
@@ -239,30 +239,30 @@ class Student{
 };
 
 int main() {
-    // Instantierea clasei Student, se apeleaza constructorul fara parametrii
+    // Instanțierea clasei Student, se apelează constructorul fără parametrii
     Student s;
 
     // Apelarea constructorului de copiere
     Student s2(s);
     Student s3 = s;
 
-    // Apelarea constructorului fara parametrii
+    // Apelarea constructorului fără parametrii
     Student s4;
 
-    // Apelarea operatorului se asignare
+    // Apelarea operatorului de asignare
     s4 = s2;
 
-    // Apelarea destructorului in ordinea inversa a definirii
-    // Se apeleaza destructorul pentru s4
-    // Se apeleaza destructorul pentru s3
-    // Se apeleaza destructorul pentru s2
-    // Se apeleaza destructurul pentru s1
+    // Apelarea destructorului in ordinea inversă a definirii
+    // Se apelează destructorul pentru s4
+    // Se apelează destructorul pentru s3
+    // Se apelează destructorul pentru s2
+    // Se apelează destructorul pentru s1
 }
 ```
 
-### Date membre & functii membre (metode) 
+### Date membre & funcții membre (metode) 
 
-Clasele pot sa **encapsuleaza** alte variabile si functii.
+Clasele pot să **encapsuleaza** alte variabile și funcții.
 
 ```c++
 class Student{
@@ -274,50 +274,50 @@ class Student{
 
 ### Vizibilitate
 
-Vizibilitatea unei date membre sau a unei metode se refera de locul de unde poate sa fie accesata
+Vizibilitatea unei date membre sau a unei metode se refera de locul de unde poate să fie accesată
 
 | Specificator de access      | Efect |
 | ----------- | ----------- |
-| private      | poate fi accesat doar in interiorul clasei |
-| protected    | poate fi accesat doar in interiorul clasei, sau din interiorul unei clase derivate|
-| public | poate fi accesat fie din clasa, fie din obiect|
+| private      | poate fi accesat doar în interiorul clasei |
+| protected    | poate fi accesat doar în interiorul clasei, sau din interiorul unei clase derivate|
+| public | poate fi accesat fie din clasă, fie din obiect|
 
-Implicit, toate datele definite in clasa sunt **private**.
+Implicit, toate datele definite în clasă sunt **private**.
 
 ```c++
 class Student{
 // private: -> Nu este necesar intrucat datele sunt implicit private, însă îl putem pune pentru vizibilitate
 
 /* 
-  Date membre & functii private
+  Date membre & funcții private
 */
 
 protected:
 
 /* 
-  Date membre & functii protected
+  Date membre & funcții protected
 */
 
-// Se aplica pentru toate pana la urmatorul specificator de access
+// Se aplică pentru toate până la următorul specificator de access
 
 public:
 
 /* 
-  Date membre & functii publice
+  Date membre & funcții publice
 */
 
 private: 
-// Putem revenii oricand la alta vizibilitate
+// Putem reveni oricând la altă vizibilitate
 };
 ```
 
 ### Lucrul cu metode
 
-O metoda a unei clase are access la toate datele si metodele definite in cadrul acesteia.
+O metodă a unei clase are access la toate datele și metodele definite in cadrul acesteia.
 
-In interiorul unei metode datele membre pot fi accesate direct, cat timp nu exista un conflict de nume (shadowing).
+În interiorul unei metode datele membre pot fi accesate direct, cât timp nu există un conflict de nume (shadowing).
 
-In cazul in care acest lucru se intampla, putem folosii pointer-ul **this** care permite accesul la clasa carei ii corespunde metoda.
+În cazul în care acest lucru se întâmplă, putem folosi pointer-ul **this** care permite accesul la clasa căreia îi corespunde metoda.
 
 ``` c++
 #include <iostream>
@@ -330,20 +330,20 @@ private:
 
     }
 public:
-    // Functie setter pentru nr_matricol
+    // Funcție setter pentru nr_matricol
     void setNrMatricol(int nr_matricol) {
-        // Intrucat argumentul are acelasi nume ca o data membra, aceasta nu poate fi folosita direct
+        // Întrucât argumentul are același nume ca o dată membră, aceasta nu poate fi folosită direct
         // Folosim pointer-ul this pentru a accesa aceste date
         this->nr_matricol = nr_matricol;
     }
 
     void increaseNrMatricol() {
-        // Se apeleaza asupra datei membre intrucat in acest scope nu exista alt nr_matricol definit.
+        // Se apelează asupra datei membre întrucât în acest scope nu există alt nr_matricol definit.
         nr_matricol++;
         exemplu_functie_privata();
     }
 
-    // Functie getter pentru nr_matricol
+    // Funcție getter pentru nr_matricol
     int getNrMatricol() {
         return nr_matricol;
     }
@@ -352,32 +352,32 @@ public:
 int main() {
     Student s;
 
-    // Datele private NU pot fi accesate din instanta clasei
+    // Datele private NU pot fi accesate din instanța clasei
     // cout << s.nr_matricol;
     // error: 'nr_matricol' is a private member of 'Student'
 
-    // Accesul la aceste date poate fi facut prin metode publice
+    // Accesul la aceste date poate fi făcut prin metode publice
     
     // Folosirea unui setter pentru a seta valoarea.
     s.setNrMatricol(5);
 
-    // Folosirea unui getter pentru accesarea datelor public pentru afisare
+    // Folosirea unui getter pentru accesarea datelor private pentru afișare
     cout<<s.getNrMatricol();
 }
 ```
 
 ### Friend
 
-Folosind specificatorul **friend** putem face ca o functie externa sau o alta clasa (orice functie din interiorul ei) sa aiba acces la datele private ale unei clase.
+Folosind specificatorul **friend** putem face ca o funcție externă sau o altă clasă (orice funcție din interiorul ei) să aibă acces la datele private ale unei clase.
 
 ```c++
-// Definim clasa aici ca sa putem sa o referentiem in clasa Student
+// Definim clasa aici ca să putem să o referențiem în clasa Student
 class Secretariat;
 
 class Student {
     int nr_matricol;
 
-    // Definim clasa Seceretariat ca clasa friend
+    // Definim clasa Seceretariat ca clasă friend
     friend class Secretariat;
     
     friend int exportNrMatricol(Student &student) {
@@ -396,29 +396,29 @@ class Secretariat {
 
 ### Supraîncărcarea operatorilor
 
-Ne permite să definim comportamentul unui obiect in fața operatorilor.
+Ne permite să definim comportamentul unui obiect în fața operatorilor.
 
 ```c++
 class Student{
     int nr_matricol;
     string nume;
 public:
-    // Supraincarcare operatorului ca functie membra
-    // Primeste ca argument o referinta ca sa previna copierea ca argument
+    // Supraîncărcarea operatorului ca funcție membră
+    // Primește ca argument o referință ca să prevină copierea ca argument
     Student& operator=(Student &aux) {
-        // previne copierea in cazul in care e acelasi obiect
+        // previne copierea în cazul în care e același obiect
         if (this == &aux) {
             return *this;
         }
         this->nr_matricol = aux.nr_matricol;
         this->nume = aux.nume;
 
-        // Intoarce o referinta ca sa previna o copiere la asignare in caz ca dam chain assignment.
+        // Întoarce o referință ca să prevină o copiere la asignare în caz că dăm chain assignment.
         return *this;
     }
 
-    // Supraincarcarea operatorului ca functie non-membra folosind friend
-    // Desi functia este definita in interiorul clasei, compilatorul vede specificatorul friend si stie ca defapt este o functie non membra
+    // Supraîncărcarea operatorului ca funcție non-membră folosind friend
+    // Deși funcția este definită în interiorul clasei, compilatorul vede specificatorul friend și stie că defapt este o funcție non membră
     friend Student& operator+(Student& student, int x) {
         Student *aux = new Student(student);
         aux -> nr_matricol += x;
@@ -427,7 +427,7 @@ public:
 
 };
 
-//// Supraincarcarea operatorului ca functie non-membra
+//// Supraîncărcarea operatorului ca funcție non-membră
 //Student& operator+(Student& student, int x) {
 //    Student *aux = new Student(student);
 //    aux->setNrMatricol(student.getNrMatricol() + x);
@@ -435,7 +435,7 @@ public:
 //}
 ```
 
-Nu pot fi supraincarcati urmatorii operatori:
+Nu pot fi supraîncărcați urmatorii operatori:
   * "." (accesarea unui membru, operatorul "punct")
   * "? :" (ternar / conditional operator)
   * "::" (operator de rezolutie)
@@ -443,37 +443,37 @@ Nu pot fi supraincarcati urmatorii operatori:
   * sizeof
   * typeid
 
-Operatorii urmatori pot fi supraincarcati doar ca functie membra:
+Operatorii următori pot fi supraîncărcați doar ca funcție membră:
   * "="
   * "( )" 
   * "[ ]" 
   * "->"
 
 
-Supraincarcarea operatorilor de comparare se face printr-o functie ce returneaza o variabila de tip bool
+Supraîncărcarea operatorilor de comparare se face printr-o funcție ce returnează o variabilă de tip bool
 
 ```c++
 friend bool operator>(const Student &a, const Student &b)
 ```
 
-Supraincarcarea operatorilor este esentiala atunci cand vrem sa folosim diferite functii utilitare (de exemplu sort pe un std::vector)
+Supraîncărcarea operatorilor este esențială atunci când vrem să folosim diferite funcții utilitare (de exemplu sort pe un std::vector)
 
 
 ### Variabile constante
 
-Putem definii variabile constante folosind `const`. Acesta permite ca valoarea acelei variabile să se schimbe (primim eroare de compilare)
+Putem definii variabile constante folosind `const`. Acesta NU permite ca valoarea acelei variabile să se schimbe (primim eroare de compilare)
 
 ```c++
 int main() {
     // definirea unui int const
-    const int x = 10; // varbiabilele constante pot primii valoare doar la inițializare
+    const int x = 10; // varbiabilele constante pot primi valoare doar la inițializare
 
     const int y = 21;
 
 
     const int * p_x = &x; // pointer la const int
 
-    // valoarea pointer-ului poate fi schimbata
+    // valoarea pointer-ului poate fi schimbată
     p_x = &y;
 
     // dar valoare din pointer nu
@@ -483,7 +483,7 @@ int main() {
 
     const int * const cp_x = &x; // pointer constant la o variabila de tipul const int
 
-    // valoare pointer-ului nu mai poate fi schimbata
+    // valoare pointer-ului nu mai poate fi schimbată
     // cp_x = &y;
     // error: cannot assign to variable 'cp_x' with const-qualified type 'const int *const'
 }
@@ -491,7 +491,7 @@ int main() {
 
 ### Obiecte constante
 
-Crearea unui obiect constant duce la necesitate initializării acestuia la momentul declarării.
+Crearea unui obiect constant duce la necesitatea inițializării acestuia la momentul declarării.
 
 O dată creat, datele membre ale acestuia nu mai pot fi schimbate.
 
@@ -510,7 +510,7 @@ public:
         return x;
     }
 
-    // desi metoda nu modifica obiectul, nu poată fi apelată asupra obiectelor declarate const
+    // deși metoda nu modifică obiectul, nu poată fi apelată asupra obiectelor declarate const
     int get_X_non_const() {
         return x;
     }
@@ -553,11 +553,11 @@ int main() {
 }
 ```
 
-## Relatii între obiecte
+## Relații între obiecte
 
 ### Compunerea
 
-Compunerea intre doua obiecte apare atunci cand un obiect face parte din celalalt. Disparitia obiectului "parinte" va duce la disparitia celuilalt.
+Compunerea între două obiecte apare atunci când un obiect face parte din celălalt. Dispariția obiectului "părinte" va duce la dispariția celuilalt.
 
 ```c++
 class Heart {
@@ -602,10 +602,10 @@ public:
 
 ## Exerciții
 
-1. Scrieți un program în C++ care să conțina (1p):
-   * clasa Mașină cu datele membre: producator, model, pret_lansare, an_fabricatie
+1. Scrieți un program în C++ care să conțină (1p):
+   * clasa Mașină cu datele membre: producător, model, preț_lansare, an_fabricație
      * constructor de inițializare cu toți parametrii
-     * destructor, constructor de copiere, operator de =, dacă considerați că sunt necesari, daca nu considerați menționati de ce
+     * destructor, constructor de copiere, operator de =, dacă considerați că sunt necesari, dacă nu considerați menționati de ce
      * supraîncarcarea operatorului de << pentru afișare (ostream)
      * supraîncarcarea operatorului de >> pentru intrare (istream)
      * funcția dată membru .calculareValoareCurenta(an_curent) care in funcție de ce an primește ca argument va calcula noua valoare a mașinii. În fiecare an o mașină iși pierde valoarea cu 5% din prețul acelui an. Deci în 2024 o mașina va avea un preț. În 2025, 95% din prețul din 24. În 2026, 95% din prețul din 2025, etc. 
@@ -625,43 +625,47 @@ classDiagram
 2. Completați codul următor astfel încât să compileze (2p):
 
 ```c++
+#include <iostream>
+
 int main() {
     Telefon t("Producator", "Model");
 
     t.aplicatie_apel();
 
-    t.apeleaza("XXXXXXXXXX"); // poate fi accesat doar din 'ecranul' în care intram prin funcția precedentă
+    t.apeleaza("XXXXXXXXXX"); // poate fi accesat doar din 'ecranul' în care intrăm prin funcția precedentă
 
-    cout << ~t; // va afisa ultimul numar format
+    std::cout << ~t; // va afișa ultimul număr format
 
     t.aplicatie_apel();
 
-    t.creeaza_contact("XXXXXXXXXX", "BBBB") // poate fi accesată doar din 'ecranul' functiei precedente
+    t.creeaza_contact("XXXXXXXXXX", "BBBB"); // poate fi accesată doar din 'ecranul' funcției precedente
 
-    t["XXXXXXXXXX"] // va returna numele contactului cu numarul "XXXXXXXXXX" "BBBB"
+    t["XXXXXXXXXX"]; // va returna numele contactului cu numărul "XXXXXXXXXX" "BBBB"
 
-    cout << t;
+    std::cout << t;
 }
 ```
 
 3. Considerați clasa:
 
 ```c++
+#include <iostream>
+
 class Example {
 public:
     Example() {
-        cout << "A";
+        std::cout << "A";
     }
     Example(const Example &aux) {
-        cout << "B";
+        std::cout << "B";
     }
     ~Example() {
-        cout << "C";
+        std::cout << "C";
     }
 };
 ```
 
-Creați o funcție main, care folosind clasa de mai sus să afișeze pe ecran: ABACAAAAAACCC (3p).
+Creați o funcție main, care folosind clasa de mai sus să afișeze pe ecran: `ABACAAAAAACCC` (3p).
 
 
 -------------------

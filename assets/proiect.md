@@ -12,11 +12,11 @@ Proiectul va fi notat în 3 etape.
 
 ### Deadlines
 
-    * saptamâna 4
-    * saptamâna 8 (aprox)
-    * saptamâna 12 (aprox)
+    * săptămâna 4
+    * săptămâna 8 (aprox)
+    * săptămâna 12 (aprox)
 
-Fiecare deadline va fi în Duminica 23:59 din săpămâna respectivă.
+Fiecare deadline va fi la 23:59 în Duminica din săptămâna respectivă.
 
 Nota pe proiect va fi dată de media aritmetică a celor 3 etape.
 
@@ -26,7 +26,7 @@ Nota pentru o etapă nu se poate schimba dacă modificați după predare.
 
 * Încărcarea în Assigment-ul de pe Teams a uneia dintre:
   
-  * a unui link (într-un fișier .txt sau orice format) cu un Pull Request cu modificarile pe care le aduceti pentru etapa la care predati. 
+  * a unui link (într-un fișier .txt sau orice format) cu un Pull Request cu modificările pe care le aduceți pentru etapa la care predați. 
   
     * Pull Request-ul trebuie să aibă toate workflow-urile trecute
     * Workflow-rile trebuie să conțină minim 3 compilatoare + verificare de Valgrind
@@ -36,7 +36,7 @@ Nota pentru o etapă nu se poate schimba dacă modificați după predare.
 
 **Atenție!**
 
- * Dacă optați pentru varianta trimiterii codurilor sursă, dacă codul nu compilează și rulează pe mașina mea  îmi rezerv dreptul să consider că nu e lucrat nimic => 1 pe etapă
+ * Dacă optați pentru varianta trimiterii codurilor sursă, dacă codul nu compilează sau nu rulează pe mașina mea îmi rezerv dreptul să consider că nu e lucrat nimic => 1 pe etapă
 
 ### Feedback
 
@@ -48,11 +48,11 @@ Oricând înainte de deadline mă puteți întreba orice legat de temă, inclusi
 
 ### Prezentare
 
-Tema va trebui să fie prezentată. Fie la o ora de laborator, proiect sau online.
+Tema va trebui să fie prezentată. Fie la o oră de laborator, proiect sau online.
 
 ### Bonus
 
-Daca prezentati proiectul cu o saptamana mai devreme decat deadline primiti 5 puncte bonus (la bonusul de laborator).
+Daca prezentați proiectul cu o săptămână mai devreme decât deadline primiți 5 puncte bonus (la bonusul de laborator).
 
 ### Mențiuni
 
