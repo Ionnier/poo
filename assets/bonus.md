@@ -1,20 +1,20 @@
 # Bonus
 
-* Bonusul se aplica doar daca promovati laboratorul
-* Bonusul are o valoare maxima de 2p care se adauga notei la laborator.
+* Bonusul se aplică doar dacă promovați laboratorul
+* Bonusul are o valoare maximă de 2p care se adaugă notei la laborator.
 
-* Modalitati de obtinere (TBD):
-  * Exercitii la laborator
+* Modalități de obținere (TBD):
+  * Exerciții la laborator
   * Bonus pe teme (?)
   * Teste pe Kahoot
-  * Alte exercitii suplimentare (?)
+  * Alte exerciții suplimentare (?)
 
-* Fiecare modalitate de obtinere va aduce un numar de puncte
+* Fiecare modalitate de obținere va aduce un număr de puncte
 
-* 20 puncte obtinute = 2p pentru nota de laborator
+* 20 puncte obținute = 2p pentru nota de laborator
 
-* La final, punctele acestea vor fi centralizate si se va face un clasament.
-  * primele 5 persoane o sa primeasca min(punctaj_obtinut, 20) cat timp diferenta dintre primul si ultimul nu este mai mare de 10% din puncte
-  * urmatoarele persoane vor primii min(punctaj_obtinut, 20 - nr din clasament dupa persoanele care isi pastreaza punctele)
+* La final, punctele acestea vor fi centralizate și se va face un clasament.
+  * primele 5 persoane o să primească min(punctaj_obținut, 20) cât timp diferența dintre primul și ultimul nu este mai mare de 10% din puncte
+  * următoarele persoane vor primi min(punctaj_obținut, 20 - nr din clasament după persoanele care își păstrează punctele)
 
-* Regulile de calculat punctajul s-ar putea sa se schimbe, insa nu ar trebui sa primiti mai putin decat ati fi primit in modul acesta (adica schimbarile vor fi facute in favoarea voastra)
+* Regulile de calculat punctajul s-ar putea să se schimbe, însă nu ar trebui să primiți mai puțin decât ați fi primit în modul acesta (adică schimbările vor fi făcute în favoarea voastră)
