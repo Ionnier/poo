@@ -4,25 +4,25 @@
 // Pentru a evita conflicte ce pot apărea din cauza existenței a două funcții cu același nume și argumente
 // Le putem declara în interiorul unui namespace
 
-// Declaram primul namespace
+// Declarăm primul namespace
 namespace namespace_name {
-    // Declaram o functie in interiorul namespace-ului
+    // Declarăm o funcție in interiorul namespace-ului
     void doSomething() {
 
     }
 }
 
-// Declaram al doilea namespace
+// Declarăm al doilea namespace
 namespace namespace_second {
-    // Declaram o functie in interiorul namespace-ului
+    // Declarăm o funcție in interiorul namespace-ului
     void doSomething() {
 
     }
 }
 
-// Pentru a utiliza functiile din interiorul unui namespace
+// Pentru a utiliza funcțiile din interiorul unui namespace
 
-// Fie spunem ca folosim toate functiile din acel namespace
+// Fie spunem ca folosim toate funcțiile din acel namespace
 
 using namespace namespace_name;
 int main() {
@@ -37,21 +37,21 @@ int main() {
 ## Declararea unei funcții (preluat din C)
 
 ```c++
-// Ca să apelăm o funcție, trebuie ca această să fie declarată.
+// Ca să apelăm o funcție, trebuie ca aceasta să fie declarată.
 
 // Putem să separăm declararea de implementare
 
-// Declaram functia
-// Necesita tipul de return, numele si tipul argumentelor
+// Declarăm funcția
+// Necesită tipul de return, numele și tipul argumentelor
 int doSomethingElse(int);
 
-// Declararea altei functii
+// Declararea altei funcții
 void doSomething() {
     // Functia poate fi apelata pentru ca este definita in acest context
     doSomethingElse(5)
 }
 
-// Implementarea efectiva a functiei
+// Implementarea efectivă a funcției
 int doSomethingElse(int x) {
     return x;
 }
@@ -97,9 +97,11 @@ Product::Product(const int &value, const int &weight) {
 }
 ```
 
-Mai mult decat atat, putem separa si fisierele celor doua.
+Mai mult decât atât, putem separa și fișierele celor doua.
 
-Fisirele C++ care conțin doar definiții se numesc "headere" și au extensiile **.h**.
+Fișirele C++ care conțin doar definiții se numesc "headere" și au extensiile **.hpp**
+
+Se mai folosește și extensia **.h** dar aceasta ar trebui să reprezinte: C/C++ compatible OR pure C.
 
 Fișierele care conțin implementare pot să rămână cu **.cpp**
 
@@ -137,11 +139,11 @@ run:
 
 full: build run
 ``` 
-(identarea se face cu tab)
+(indentarea se face cu tab)
 
 Acompaniază codul nostru și reprezintă instrucțiunile care trebuie rulate ca să compilăm programul.
 
-Când folosim CLion acesta va folosi CMake ([exemplu](../../labs/L02/example/CMakeLists.txt))
+Când folosim CLion acesta va folosi CMake ([exemplu](/labs/L02/example/CMakeLists.txt))
 
 Avantajele folosirii unui Makefile e faptul că nu o să compileze toate fișierele ci doar cele care se schimbă (în funcție de cum e făcut).
 
@@ -163,7 +165,7 @@ Avantajele folosirii unui Makefile e faptul că nu o să compileze toate fișier
 6. Reveniți pe pagina cu proiectul
 7. Apăsați pe butonul clone.
 8. Selectați HTTPS (sau SSH dacă ați setat o cheie SSH)
-9. Folosiți `git clone LINK_CLONE_PRELUAT_LA_PASUL_ANTERIOR` sau deschideti CLion fara sa aveti un proiect deschis si apasati pe "Clone from VCS"
+9. Folosiți `git clone LINK_CLONE_PRELUAT_LA_PASUL_ANTERIOR` sau deschideti CLion fara sa aveti un proiect deschis și apasați pe "Clone from VCS"
 10. Creati un branch nou folosind comanda `git branch etapa-1`
 11. Intrati pe branch-ul respectiv folosind `git checkout etapa-1`
 12. Faceti orice modificare pentru tema
