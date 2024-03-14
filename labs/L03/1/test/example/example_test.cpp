@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-#include "example.h"
 #include <persoana.h>
 
 TEST(SuiteName, TestName) {

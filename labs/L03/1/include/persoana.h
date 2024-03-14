@@ -1,7 +1,3 @@
-//
-// Created by Dragos BAHRIM on 14.03.2024.
-//
-
 #ifndef OOP_PERSOANA_H
 #define OOP_PERSOANA_H
 #include <iostream>

@@ -1,93 +1,7 @@
 #include <iostream>
-#include <string>
-#include <vector>
-#include <persoana.h>
+#include <biblioteca.h>
+
 using namespace std;
-
-class Carte {
-private:
-    string nume;
-    string autor;
-    Persoana *persoana_imprumuta;
-public:
-    Carte(const string &nume, const string &autor) : nume(nume), autor(autor) {
-        persoana_imprumuta = nullptr;
-    }
-
-    bool operator==(const Carte &c) const {
-        return c.autor == this->autor && c.nume == this->nume;
-    }
-
-    void imprumuta_la(Persoana *persoanaImprumuta) {
-        persoana_imprumuta = persoanaImprumuta;
-    }
-
-    bool este_imprumutata() {
-        return persoana_imprumuta != nullptr;
-    }
-
-    bool este_imprumutata_la(const Persoana *p) {
-        return *persoana_imprumuta == *p;
-    }
-
-    friend ostream& operator<<(ostream& out, const Carte &c) {
-        out << "Carte(nume=" << c.nume << ", autor=" << c.autor;
-        if (c.persoana_imprumuta == nullptr) {
-            out << ")";
-            return out;
-        }
-        out << ", persoana=" << *(c.persoana_imprumuta) << ")";
-        return out;
-    }
-
-};
-
-class Biblioteca {
-private:
-    vector<Carte> carti_administrate;
-public:
-    void adauga_carte(const Carte &c) {
-        carti_administrate.push_back(c);
-    }
-
-    void elimina_carte(const Carte &c) {
-        for (auto i = carti_administrate.begin(); i != carti_administrate.end(); i++) {
-            if (*i == c) {
-                carti_administrate.erase(i);
-                break;
-            }
-        }
-    }
-
-    bool imprumuta_carte(Persoana *p, const Carte &c) {
-        for (auto &element: this->carti_administrate) {
-            if (element == c && !element.este_imprumutata()) {
-                element.imprumuta_la(p);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    bool retur_carte(Persoana *p, const Carte &c) {
-        for (auto &element: this->carti_administrate) {
-            if (element == c && element.este_imprumutata_la(p)) {
-                element.imprumuta_la(nullptr);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    friend ostream& operator<<(ostream& out, const Biblioteca &b) {
-        out << "Biblioteca(";
-        for (auto &element: b.carti_administrate) {
-            out << element << ", ";
-        }
-        out << ")";
-        return out;
-    }
-};
 
 void afisare_status_imprumut(bool value) {
     if (value) {
@@ -97,35 +11,99 @@ void afisare_status_imprumut(bool value) {
     cout << "Nu a fost imprumutata\n";
 }
 
+void menu() {
+    vector<string> mesaje = {
+            "Afisare persoane",
+            "Afisare biblioteca",
+            "Adaugare carte",
+            "Eliminare carte",
+            "Imprumuta carte",
+            "Returnare carte"
+    };
+    for (int i = 0; i < mesaje.size(); i++) {
+        cout << i + 1 << ". " << mesaje[i] << endl;
+    }
+    cout << "Optiune = ";
+}
+
 int main() {
-    Carte c1("carte1", "autor1");
-    Carte c2("carte2", "autor2");
-    Carte c3("carte3", "autor3");
-    Biblioteca b = Biblioteca();
-    b.adauga_carte(c1);
-    b.adauga_carte(c2);
-    b.adauga_carte(c3);
-    cout << b << endl;
+    int n;
+    bool continua = true;
+    vector<Persoana> persoane = {
+        Persoana("Persoana 1"),
+        Persoana("Persoana 2"),
+        Persoana("Persoana 3"),
+    };
+    Biblioteca b;
+    while(continua) {
+        menu();
+        cin >> n;
+        switch (n) {
+            case 1: {
+                for (auto &persoana: persoane){
+                    cout << persoana << endl;
+                }
+                break;
+            }
+            case 2: {
+                cout << b << endl;
+                break;
+            }
+            case 3: {
+                Carte c;
+                cin >> c;
+                b.adauga_carte(c);
+                break;
+            }
+            case 4: {
+                Carte c;
+                cin >> c;
+                b.elimina_carte(c);
+                break;
+            }
+            case 5: {
+                cout << "Index persoana";
+                int index;
+                cin >> index;
+                if (index < 0 || (index + 1) > persoane.size()) {
+                    cout << "Person not found";
+                    break;
+                }
+                Carte c;
+                cin >> c;
+                afisare_status_imprumut(b.imprumuta_carte(&persoane[index], c));
+                break;
+            }
+            case 6: {
+                cout << "Index persoana" << endl;
+                int index;
+                cin >> index;
+                if (index < 0 || (index + 1) > persoane.size()) {
+                    cout << "Person not found" << endl;
+                    break;
+                }
+                Carte c;
+                cin >> c;
+                b.retur_carte(&persoane[index], c);
+                break;
+            }
+            case 0: {
+                continua = false;
+                break;
+            }
+            default: {
+                cout << "Not implemented\n";
+            }
+        }
+        if (continua) {
+            cout << "Press any key to contiune...";
 
-    b.elimina_carte(c1);
-
-    cout << b << endl;
-
-    Persoana p("persoana1");
-
-    afisare_status_imprumut(b.imprumuta_carte(&p, c1));
-
-    afisare_status_imprumut(b.imprumuta_carte(&p, c2));
-
-    afisare_status_imprumut(b.imprumuta_carte(&p, c2));
-
-    cout << b << endl;
-
-    b.retur_carte(&p, c2);
-
-    cout << b << endl;
-
-    afisare_status_imprumut(b.imprumuta_carte(&p, c2));
-
+            // Twice because when you read ints you
+            //   already have one RETURN character in buffer
+            // worst case, you have to press twice
+            cin.get();
+            cin.get();
+        }
+    }
     return 0;
 }
