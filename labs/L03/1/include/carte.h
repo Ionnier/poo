@@ -17,9 +17,9 @@ public:
 
     void imprumuta_la(Persoana *persoanaImprumuta);
 
-    bool este_imprumutata();
+    bool este_imprumutata() const;
 
-    bool este_imprumutata_la(const Persoana *p);
+    bool este_imprumutata_la(const Persoana *p) const;
 
     friend ostream& operator<<(ostream& out, const Carte &c);
     friend istream& operator>>(istream& in, Carte &c);

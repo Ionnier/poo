@@ -15,11 +15,11 @@ void Carte::imprumuta_la(Persoana *persoanaImprumuta) {
     persoana_imprumuta = persoanaImprumuta;
 }
 
-bool Carte::este_imprumutata() {
+bool Carte::este_imprumutata() const {
     return persoana_imprumuta != nullptr;
 }
 
-bool Carte::este_imprumutata_la(const Persoana *p) {
+bool Carte::este_imprumutata_la(const Persoana *p) const {
     return *persoana_imprumuta == *p;
 }
 

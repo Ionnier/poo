@@ -41,3 +41,18 @@ ostream& operator<<(ostream& out, const Biblioteca &b) {
     out << ")";
     return out;
 }
+
+
+int Biblioteca::numar_carti() const {
+    return int(carti_administrate.size());
+}
+
+int Biblioteca::numar_carti_imprumutate() const {
+    int nr_carti = 0;
+    for (auto carte: carti_administrate) {
+        if (carte.este_imprumutata()) {
+            nr_carti++;
+        }
+    }
+    return nr_carti;
+}

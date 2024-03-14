@@ -17,6 +17,10 @@ public:
 
     bool retur_carte(Persoana *p, const Carte &c);
 
+    int numar_carti() const;
+
+    int numar_carti_imprumutate() const;
+
     friend ostream& operator<<(ostream& out, const Biblioteca &b);
 };
 #endif //OOP_BIBLIOTECA_H
