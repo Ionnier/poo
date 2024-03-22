@@ -813,7 +813,7 @@ int main()
 ```
 
 
-Exercițiu (4p):
+## Exercițiu (4p)
 
 Tim a observat că are nevoie de un sistem de gestiune a fișierelor pentru a-și eficientiza modul de lucru.
 Ca să își testeze ideea de aplicație, va scrie un program in C++ folosind programarea orientată obiect.
@@ -855,9 +855,10 @@ int main() {
 }
 ```
 
-Adițional (2p):
+### Adițional (2p):
 
     * Adăugați support pentru pentru symbolic links. Pe scurt, acestea sunt shortcut-uri către alte fișiere sau foldere. 
+  
     * Ilustrați comportamentul de symlink (accesarea unui simlink este defapt accesarea directa a fisierului sau al directorului) insa nu au size
 
 Pentru afisarea ierarhiei puteti modifica codul urmator:
