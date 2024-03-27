@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCZ8SR3v3ZpAJKa-0xK2D3lYQNhNmy0Myk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>861026171218</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.web</string>
+	<key>PROJECT_ID</key>
+	<string>bonus-4d63c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bonus-4d63c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:861026171218:ios:84d5404fdad1f15b4b628b</string>
+	<key>DATABASE_URL</key>
+	<string>https://bonus-4d63c-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
