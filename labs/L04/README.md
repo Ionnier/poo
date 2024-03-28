@@ -837,7 +837,7 @@ int main() {
     Directory *tim = home->navigateTo("tim");
     tim->addItem(new File("info", "txt", 100))
     tim->addItem(new File("data", "in"))
-    tim->addItem(new Directory("data", "in");
+    tim->addItem(new Directory("data");
 
     cout << root.getSize() << endl;
     cout << root.getNumberOfItems() << endl;
