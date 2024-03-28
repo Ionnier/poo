@@ -654,7 +654,7 @@ int main()
 
 ### Clase abstracte
 
-O clasă abstracte are CEL PUȚIN o funcție virtual pură și nu pot să fie instanțiate.
+O clasă abstracte are CEL PUȚIN o funcție virtual pură și nu poate să fie instanțiată.
 
 Orice derivată trebuie să rescrie acea funcție, altfel o să fie și ea abstractă.
 

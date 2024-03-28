@@ -204,6 +204,12 @@ public:
         this->nume = nume;
     }
 
+    // Declararea unui constructor de copiere
+    Student(const Student &aux) {
+        this->nr_matricol = aux.nr_matricol;
+        this->nume = aux.nume;
+    }
+
     // Declararea unui destructor
     ~Student() {
         nr_matricol = 0;
