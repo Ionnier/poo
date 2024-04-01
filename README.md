@@ -13,6 +13,11 @@
 ## Laborator
  * [L01](/labs/L01/README.md)
  * [L02](/labs/L02/README.md)
+ * L03
+   * [L03_1](/labs/L03/1/main.cpp)
+   * [L03_2](/labs/L03/2/main.cpp)
+ * [L04](/labs/L04/README.md)
+ * [L05](/labs/L05/README.md)
 
 ## Alte informații
  * [knowledge grail](https://github.com/mcmarius/poo)
