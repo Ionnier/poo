@@ -18,6 +18,7 @@
    * [L03_2](/labs/L03/2/main.cpp)
  * [L04](/labs/L04/README.md)
  * [L05](/labs/L05/README.md)
+ * [L06](/labs/L06/README.md)
 
 ## Alte informații
  * [knowledge grail](https://github.com/mcmarius/poo)
