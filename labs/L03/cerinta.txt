@@ -1,0 +1,14 @@
+// O societate de investiții în imobiliare decide să construiască mai multe blocuri într-un complex dintr-o zonă atractivă din București.
+// După finalizarea acestora, firma va dorii să vândă apartamentele printr-o companie de agenți imobiliari.
+// Pentru documentarea tuturor operațiilor asupra acestor resurse, firma va apela la o platformă de gestionare în care va
+// introduce detalii despre fiecare apartament.
+//
+// Aplicația va avea ca scop ușurarea mai multor operații:
+// - vizualizarea tuturor blocurilor
+// - adaugarea unui nou bloc (alaturi de componentele acestuia)
+// - adăugarea și modificarea de apartamente din cadrul unui bloc
+// - modificarea detaliilor unui bloc / apartament
+// - crearea unei asocieri intre o listă de agenți imobiliari și apartamentele pe care le au în gestiune
+// - afisarea unui istoric de vizualizare per agent imobiliar
+// - afisarea unui istoric de vizualizare per apartament
+// - posibilitatea de marcare a apartamentelor vandute
