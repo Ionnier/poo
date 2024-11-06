@@ -423,8 +423,54 @@ int main() {
 
 [via @mcmarius](https://github.com/mcmarius/poo/tree/master/tema-3#templates)
 
-### STL
+## STL
 
-[random article](https://abhiarrathore.medium.com/the-magic-of-c-stl-standard-template-library-e910f43379ea)
+### Containers
 
-[iterators](https://www.programiz.com/cpp-programming/iterators)
+* [std::vector](https://en.cppreference.com/w/cpp/container/vector#Example)
+* [std::array](https://en.cppreference.com/w/cpp/container/array#Example)
+* [std::list](https://en.cppreference.com/w/cpp/container/list#Example)
+* [std::forward_list](https://en.cppreference.com/w/cpp/container/forward_list)
+* [std::queue](https://en.cppreference.com/w/cpp/container/queue#Example)
+* [std::deque](https://en.cppreference.com/w/cpp/container/deque#Example)
+* [std::priority_queue](https://en.cppreference.com/w/cpp/container/priority_queue#Example)
+* [std::stack](https://en.cppreference.com/w/cpp/container/stack#Example)
+* [std::set](https://en.cppreference.com/w/cpp/container/set#Example) & [std::unordered_set](https://en.cppreference.com/w/cpp/container/unordered_set#Example)
+* [std::multiset](https://en.cppreference.com/w/cpp/container/multiset)
+* [std::map](https://en.cppreference.com/w/cpp/container/map#Example) & [std::unordered_map](https://en.cppreference.com/w/cpp/container/unordered_map#Example)
+* [std::multimap](https://en.cppreference.com/w/cpp/container/multimap)
+
+### Iterators
+* [std::iterator](https://en.cppreference.com/w/cpp/iterator/iterator#Example)
+* [std::reverse_iterator](https://en.cppreference.com/w/cpp/iterator/reverse_iterator#Example)
+* [std::const_iterator](https://en.cppreference.com/w/cpp/iterator/basic_const_iterator#Helper_alias_templates)
+* [std::insert_iterator](https://en.cppreference.com/w/cpp/iterator/insert_iterator#Example)
+
+### Alghoritms
+* [std::sort](https://en.cppreference.com/w/cpp/algorithm/sort#Example) & [std::stable_sort](https://en.cppreference.com/w/cpp/algorithm/stable_sort#Example)
+* [std::binary_search](https://en.cppreference.com/w/cpp/algorithm/binary_search#Example)
+* [std::find & std::find_if](https://en.cppreference.com/w/cpp/algorithm/find#Example)
+* [std::transform](https://en.cppreference.com/w/cpp/algorithm/transform#Example)
+* [std::accumulate](https://en.cppreference.com/w/cpp/algorithm/accumulate#Example)
+* [std::remove & std::erase](https://en.cppreference.com/w/cpp/algorithm/remove#Example)
+* [std::partition](https://en.cppreference.com/w/cpp/algorithm/partition#Example)
+
+### [Callable objects](https://en.wikipedia.org/wiki/Callable_object#In_C++)
+* [std::plus](https://en.cppreference.com/w/cpp/utility/functional/plus)
+* [std::minus](https://en.cppreference.com/w/cpp/utility/functional/minus)
+* [std::multiplies](https://en.cppreference.com/w/cpp/utility/functional/multiplies)
+* [std::divides](https://en.cppreference.com/w/cpp/utility/functional/divides)
+* [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to)
+* [std::not_equal_to](https://en.cppreference.com/w/cpp/utility/functional/not_equal_to)
+* [std::greater](https://en.cppreference.com/w/cpp/utility/functional/greater)
+* [std::less](https://en.cppreference.com/w/cpp/utility/functional/less)
+
+### Utilities
+
+* [std::pair](https://en.cppreference.com/w/cpp/utility/pair)
+* [std::tuple](https://en.cppreference.com/w/cpp/utility/tuple#Example)
+* [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr#Example)
+* [std::unique_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr#Example)
+
+
+## [Lambdas](https://github.com/Ionnier/poo/tree/main/proiect/P03#lambda-functions)
